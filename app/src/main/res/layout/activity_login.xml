@@ -8,7 +8,7 @@
     android:paddingHorizontal="35dp"
     android:gravity="center_horizontal"
     android:fitsSystemWindows="true"
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
     <View
         android:layout_width="200dp"
@@ -39,6 +39,7 @@
         android:inputType="textPassword" />
 
     <TextView
+        android:id="@+id/loginForget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -46,9 +47,11 @@
         android:textColor="@color/black_A500"/>
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_enter"
+        android:backgroundTint="@color/colorPrimary"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -88,6 +91,7 @@
         android:gravity="center"
         android:layout_marginVertical="20dp">
         <View
+            android:id="@+id/loginSocial"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@color/black_A700"
@@ -103,5 +107,21 @@
             android:background="@color/black_A700"
             android:layout_margin="10dp"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/loginSignup"
+            android:text="@string/login_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/link" />
+        <TextView
+            android:text="@string/login_signup_additionally"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 
 </LinearLayout>

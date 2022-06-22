@@ -3,6 +3,7 @@
     <string name="app_name">갓생살기</string>
 
     <string name="OR">OR</string>
+    <string name="check">확인</string>
 
 <!--    Login Activity-->
     <string name="login_description">갓생살기는 로그인이 필요한 서비스입니다 :)</string>
@@ -13,6 +14,9 @@
     <string name="login_other_enter">소셜 네트워크 계정으로 로그인</string>
     <string name="login_signup">회원가입</string>
     <string name="login_signup_additionally">하고 갓생살이 꿀팁 공유하기</string>
+    <string name="login_fail_blank">아이디와 비밀번호를 입력해주세요.</string>
+    <string name="login_fail_email">아이디를 확인해주세요.</string>
+
 
 
 </resources>
