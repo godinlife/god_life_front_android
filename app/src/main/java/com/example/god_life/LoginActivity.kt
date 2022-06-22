@@ -25,11 +25,9 @@ class LoginActivity : AppCompatActivity() {
     private fun initListener(){
         binding.loginBtn.setOnClickListener{
             if(checkForm()){
-                Network().login(binding.loginId.text.toString(),binding.loginPw.text.toString()){
-//                    if(){
-                        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-//                        this@LoginActivity.finish()
-//                    }
+                if(Network().login(binding.loginId.text.toString(),binding.loginPw.text.toString())){
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    this@LoginActivity.finish()
                 }
             }
         }
