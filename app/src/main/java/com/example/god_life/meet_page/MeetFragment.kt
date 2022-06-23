@@ -15,7 +15,7 @@ import com.example.god_life.R
 import com.example.god_life.databinding.*
 import com.google.android.material.appbar.AppBarLayout
 
-class MeetFragment(val abMain: AppBarLayout) : Fragment() {
+class MeetFragment() : Fragment() {
     private lateinit var binding:FragmentMeetBinding
     private lateinit var categoryAdapter: MeetCategoryAdapter
     private lateinit var classAdapter: MeetClassAdapter

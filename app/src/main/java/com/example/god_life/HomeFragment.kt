@@ -18,7 +18,7 @@ import com.example.god_life.databinding.RowHomeFindBinding
 import com.example.god_life.databinding.RowHomeHotBinding
 import com.google.android.material.appbar.AppBarLayout
 
-class HomeFragment(val abMain:AppBarLayout) : Fragment() {
+class HomeFragment() : Fragment() {
     private lateinit var binding:FragmentHomeBinding
     private lateinit var hotAdapter: HomeAdapter
     private lateinit var findAdapter: HomeAdapter
@@ -40,7 +40,6 @@ class HomeFragment(val abMain:AppBarLayout) : Fragment() {
         initRecyclerView()
     }
     private fun initToolbar(){
-        abMain.children
     }
 
     private fun initListener(){

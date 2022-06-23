@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        homeFragment = HomeFragment(binding.abMain)
-        shareFragment = ShareFragment(binding.abMain)
-        settingFragment = SettingFragment(binding.abMain)
-        addFragment = AddFragment(binding.abMain)
-        meetFragment = MeetFragment(binding.abMain)
+        homeFragment = HomeFragment()
+        shareFragment = ShareFragment()
+        settingFragment = SettingFragment()
+        addFragment = AddFragment()
+        meetFragment = MeetFragment()
 
-        binding.abMain
         initView()
 
     }
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView(){
         changeFragment(homeFragment)
-        binding.mainNavigation.setScrollPosition(2,0f,true)
+        binding.mainNavigation.getTabAt(2)!!.select()
 
         binding.mainNavigation.addOnTabSelectedListener(
             object: TabLayout.OnTabSelectedListener {
@@ -51,10 +50,22 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     when (tab!!.position) {
-                        0 -> changeFragment(shareFragment)
-                        1 -> changeFragment(meetFragment)
-                        3 -> changeFragment(addFragment)
-                        4 -> changeFragment(settingFragment)
+                        0 -> {
+                            changeFragment(shareFragment)
+                            binding.tbMainTitle.text = "갓생공유"
+                        }
+                        1 -> {
+                            changeFragment(meetFragment)
+                            binding.tbMainTitle.text = "갓생모임"
+                        }
+                        3 -> {
+                            changeFragment(addFragment)
+                            binding.tbMainTitle.text = "더보기"
+                        }
+                        4 -> {
+                            changeFragment(settingFragment)
+                            binding.tbMainTitle.text = "설정"
+                        }
                     }
                 }
             }
@@ -63,9 +74,6 @@ class MainActivity : AppCompatActivity() {
             changeFragment(homeFragment)
             binding.mainNavigation.getTabAt(2)!!.select()
         }
-        binding.tbMainBack.setOnClickListener{
-            onBackPressed()
-        }
     }
 
 
@@ -73,6 +81,8 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.mainFrame, fragment)
         transaction.commit()
+        binding.tbMainTitle.text = "갓생살기"
+
 
     }
 }

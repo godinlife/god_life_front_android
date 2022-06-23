@@ -9,7 +9,7 @@ import com.example.god_life.R
 import com.example.god_life.databinding.FragmentAddBinding
 import com.google.android.material.appbar.AppBarLayout
 
-class AddFragment(val abMain: AppBarLayout) : Fragment() {
+class AddFragment() : Fragment() {
     private lateinit var binding:FragmentAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
