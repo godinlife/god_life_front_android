@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rect_radious_stroke"
+    android:padding="10dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="2">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/rowMeetClassCategory"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@color/black"
+        android:layout_width="25dp"
+        android:layout_height="25dp"/>
+    <TextView
+        android:id="@+id/rowMeetClassName"
+        android:text="asdfasdf"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassCategory"
+        android:layout_width="wrap_content"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/rowMeetClassLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="갓생레벨7"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rowMeetClassName"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rowMeetClassSpecial"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radious"
+        android:backgroundTint="@color/black"
+        android:paddingHorizontal="7dp"
+        android:layout_marginStart="8dp"
+        android:text="New"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rowMeetClassName"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassLevel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rowMeetClassText"
+        android:text="asdfasdfadsfds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rowMeetClassCategory"
+        app:layout_constraintBottom_toTopOf="@id/rowMeetClassNumberImage"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/rowMeetClassNumberImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/radious"
+        android:layout_width="18dp"
+        android:layout_height="18dp"/>
+    <TextView
+        android:id="@+id/rowMeetClassNumber"
+        android:text="17명"
+        android:paddingHorizontal="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassNumberImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/rowMeetClassLocateImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassNumber"
+        android:src="@drawable/radious"
+        android:layout_marginStart="18dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"/>
+    <TextView
+        android:id="@+id/rowMeetClassLocate"
+        android:text="서울 송파구"
+        android:paddingHorizontal="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassLocateImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/rowMeetClassImage"
+        android:src="@color/colorPrimary"
+        android:layout_margin="3dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -17,8 +17,17 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="link">#FF3399FF</color>
+    <color name="light_red">#FFFF4444</color>
 
     <color name="black_A200">#E0000000</color>
     <color name="black_A500">#B0000000</color>
     <color name="black_A700">#80000000</color>
+
+    <color name="gray_200">#FF999999</color>
+    <color name="gray_700">#FFD9D9D9</color>
+
+    <color name="white_200">#FFE0E0E0</color>
+    <color name="white_500">#FFB0B0B0</color>
+    <color name="white_700">#FF808080</color>
+
 </resources>

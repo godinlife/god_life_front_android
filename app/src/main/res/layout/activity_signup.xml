@@ -72,8 +72,8 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:paddingHorizontal="6dp"
                     android:paddingVertical="3dp"
-                    android:textColor="@color/white"
                     android:text="번호 확인"
+                    android:textColor="@color/white"
                     android:textSize="12sp" />
             </LinearLayout>
             <TextView
