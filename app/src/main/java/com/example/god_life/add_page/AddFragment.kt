@@ -31,5 +31,4 @@ class AddFragment(val abMain: AppBarLayout) : Fragment() {
     private fun initRecyclerView(){
 
     }
-
 }

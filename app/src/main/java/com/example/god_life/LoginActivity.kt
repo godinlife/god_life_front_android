@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         binding.loginForget.setOnClickListener{
-
+            startActivity(Intent(this@LoginActivity, testActivity::class.java))
         }
         binding.loginSignup.setOnClickListener{
             startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
