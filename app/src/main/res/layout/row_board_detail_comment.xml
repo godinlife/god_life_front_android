@@ -12,7 +12,7 @@
         android:layout_marginVertical="10dp"
         android:src="@color/black_A500"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/rowBoardDetailCommentName"

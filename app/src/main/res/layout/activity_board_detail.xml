@@ -105,6 +105,7 @@
     <TextView
         android:id="@+id/boardDetailLikeSum"
         android:textSize="14dp"
+        android:layout_marginTop="18dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/rvDetailBoardImage"
@@ -114,6 +115,7 @@
     <ImageView
         android:id="@+id/boardDetailComment"
         android:src="@drawable/ic_baseline_message_24"
+        android:layout_marginTop="18dp"
         app:layout_constraintTop_toBottomOf="@id/rvDetailBoardImage"
         app:layout_constraintStart_toEndOf="@id/boardDetailLikeSum"
         android:layout_width="18dp"
@@ -123,6 +125,7 @@
         android:textSize="14dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
         app:layout_constraintTop_toBottomOf="@id/rvDetailBoardImage"
         app:layout_constraintStart_toEndOf="@id/boardDetailComment"
         android:paddingHorizontal="10dp"/>
@@ -131,6 +134,7 @@
         android:id="@+id/boardDetailCommentLayout"
         app:layout_constraintTop_toBottomOf="@id/boardDetailLike"
         android:layout_width="match_parent"
+        android:layout_marginTop="18dp"
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:gravity="center_vertical">

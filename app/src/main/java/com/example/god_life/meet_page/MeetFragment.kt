@@ -1,7 +1,9 @@
 package com.example.god_life.meet_page
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -20,6 +22,9 @@ class MeetFragment() : Fragment() {
     private lateinit var categoryAdapter: MeetCategoryAdapter
     private lateinit var classAdapter: MeetClassAdapter
     private var categoryLimit:Boolean = true
+
+    private var dataOrigin:ArrayList<MeetCategoryData> = ArrayList<MeetCategoryData>()
+    private var dataLimit:ArrayList<MeetCategoryData> =ArrayList<MeetCategoryData>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +48,7 @@ class MeetFragment() : Fragment() {
         binding.rvMeetCategory.adapter = categoryAdapter
         binding.rvMeetCategory.setOnTouchListener(null)
 
-        categoryAdapter.setData(arrayListOf(
+        dataOrigin = arrayListOf(
             MeetCategoryData(R.color.black_A200, "사교/모임"),
             MeetCategoryData(R.color.black_A500, "운동"),
             MeetCategoryData(R.color.black_A700, "연애/결혼"),
@@ -54,15 +59,31 @@ class MeetFragment() : Fragment() {
             MeetCategoryData(R.color.purple_700, "외국어 공부"),
             MeetCategoryData(R.color.white_200, "문화생활"),
             MeetCategoryData(R.color.colorPrimaryVariant, "악기"),
-        ))
+        )
+        dataLimit = arrayListOf(
+            MeetCategoryData(R.color.black_A200, "사교/모임"),
+            MeetCategoryData(R.color.black_A500, "운동"),
+            MeetCategoryData(R.color.black_A700, "연애/결혼"),
+            MeetCategoryData(R.color.colorOnPrimary, "E-스포츠"),
+            MeetCategoryData(R.color.colorSecondaryVariant, "미술"),
+            MeetCategoryData(R.color.purple_500, "반려동물"),
+            MeetCategoryData(R.color.gray_700, "독서활동"),
+            MeetCategoryData(R.color.purple_700, "외국어 공부")
+        )
+
+        categoryAdapter.setData(dataOrigin)
 
         binding.meetCategoryButton.setOnClickListener{
-//            categoryLimit = !categoryLimit
-//            categoryAdapter.limitData(categoryLimit)
+            toggleCategory()
         }
         binding.rvMeetClass.layoutManager = LinearLayoutManager(requireContext())
         classAdapter = MeetClassAdapter()
         binding.rvMeetClass.adapter = classAdapter
+
+
+        classAdapter.onClickListener = {
+            startActivity(Intent(context, MeetDetailActivity::class.java))
+        }
 
         classAdapter.setData(arrayListOf(
             MeetClassData(R.color.black_A700, "미슐랭 가이드",7,false,true,"https://picsum.photos/200/300","일주일에 한 번, 야외에서 수채화",17, "서울 송파구"),
@@ -72,11 +93,24 @@ class MeetFragment() : Fragment() {
             MeetClassData(R.color.black_A700, "미슐랭 가이드",1,false,true,"https://picsum.photos/200/300","일주일에 한 번, 야외에서 수채화",17, "서울 송파구"),
             MeetClassData(R.color.black_A700, "미슐랭 가이드",7,false,true,"https://picsum.photos/200/300","일주일에 한 번, 야외에서 수채화",17, "서울 송파구"),
         ))
+
+    }
+    private fun toggleCategory(){
+        Log.d("asd","zxczcxzxczxczxc")
+        categoryLimit = !categoryLimit
+        if(categoryLimit){
+            binding.meetCategoryButton.setCompoundDrawables(requireContext().resources.getDrawable(R.drawable.ic_baseline_keyboard_arrow_down_24), null, null, null)
+            categoryAdapter.setData(dataOrigin)
+        }else{
+            binding.meetCategoryButton.setCompoundDrawables(requireContext().resources.getDrawable(R.drawable.ic_baseline_keyboard_arrow_up_24), null, null, null)
+            categoryAdapter.setData(dataLimit)
+        }
     }
 }
 
 class MeetCategoryAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val data: ArrayList<MeetCategoryData> = arrayListOf()
+
     companion object {
         val LIMIT: Int = 8
     }
@@ -87,14 +121,13 @@ class MeetCategoryAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         notifyItemRangeRemoved(0, prev)
 
         this.data.addAll(data)
-        notifyItemRangeInserted(0, LIMIT)
+        notifyItemRangeInserted(0, data.size)
     }
-    fun limitData(isLimit:Boolean){
-        if(isLimit){
-            notifyItemRangeRemoved(LIMIT, data.size-LIMIT)
-        }else{
-            notifyItemRangeInserted(LIMIT, data.size)
-        }
+    fun extendData(){
+        notifyItemRangeInserted(LIMIT, data.size)
+    }
+    fun limitData(){
+        notifyItemRangeRemoved(LIMIT, data.size-LIMIT)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -116,6 +149,7 @@ class MeetCategoryAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 class MeetClassAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val data: ArrayList<MeetClassData> = arrayListOf()
+    var onClickListener: (() -> Unit)? = null
 
     fun setData(data:ArrayList<MeetClassData>){
         val prev = this.data.size
@@ -136,6 +170,7 @@ class MeetClassAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as MeetClassViewHolder).bind(data[position])
+        holder.onClickListener = onClickListener
     }
 
     override fun getItemCount(): Int {
@@ -150,6 +185,8 @@ class MeetCategoryViewHolder(private val binding: RowMeetCategoryBinding): Recyc
     }
 }
 class MeetClassViewHolder(private val binding: RowMeetClassBinding): RecyclerView.ViewHolder(binding.root){
+    var onClickListener: (() -> Unit)? = null
+
     fun bind(data: MeetClassData){
 
         binding.rowMeetClassCategory.setImageResource(data.categoryImage)
@@ -175,9 +212,7 @@ class MeetClassViewHolder(private val binding: RowMeetClassBinding): RecyclerVie
 
         levelColor(data.level)
 
-        binding.root.setOnClickListener{
-//            onClickListener?.let { it(data.id,data.name,data.term) }
-        }
+        binding.root.setOnClickListener{ onClickListener?.let { it() } }
     }
 
     private fun levelColor(level:Int){

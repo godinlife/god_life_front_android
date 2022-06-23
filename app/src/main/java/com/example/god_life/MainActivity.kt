@@ -82,7 +82,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.mainFrame, fragment)
         transaction.commit()
         binding.tbMainTitle.text = "갓생살기"
-
-
     }
 }

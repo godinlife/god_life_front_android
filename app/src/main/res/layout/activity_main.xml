@@ -34,6 +34,20 @@
                 android:layout_width="wrap_content"
                 android:layout_gravity="start"
                 android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/tbMainNotification"
+                android:src="@drawable/ic_baseline_notifications_none_24"
+                android:layout_gravity="end"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginHorizontal="8dp"/>
+            <ImageView
+                android:id="@+id/tbMainSearch"
+                android:src="@drawable/ic_baseline_search_24"
+                android:layout_gravity="end"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginHorizontal="8dp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

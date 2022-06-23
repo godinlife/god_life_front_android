@@ -15,6 +15,7 @@
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_board_detail.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_meet_detail.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_signup.xml" value="0.33" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_test.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/activity_test2.xml" value="0.3848958333333333" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_chat.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_home.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_meet.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_meet_detail_info.xml" value="0.33" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_picture.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_setting.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/fragment_share.xml" value="0.3619791666666667" />
@@ -34,6 +36,7 @@
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_home_hot.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_meet_category.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_meet_class.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_meet_detail_info.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_picture.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/layout/row_share_board.xml" value="0.3848958333333333" />
         <entry key="..\:/Users/dlwpd/Desktop/god_life/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.389" />

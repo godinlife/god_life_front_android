@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.God_life">
         <activity
+            android:name=".meet_page.MeetDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".share_page.WriteBoardActivity"
             android:exported="false" />
         <activity
