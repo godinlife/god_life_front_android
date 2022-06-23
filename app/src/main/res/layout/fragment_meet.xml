@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".meet_page.MeetFragment">
+    tools:context=".meet_page.MeetFragment"
+    android:layout_marginHorizontal="12dp"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    tools:context=".meet_page.MeetFragment"
+    android:layout_marginHorizontal="12dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
     <TextView
+        android:text="나의 관심사"
+        android:layout_marginVertical="14dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMeetCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/meetCategoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="@drawable/rect_stroke"
+        android:paddingHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        android:text="카테고리 "
+        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:text="갓"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="생을 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="같"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_red"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="이할 모임 찾기"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMeetClass"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+</ScrollView>

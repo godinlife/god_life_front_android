@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         )
         binding.mnHome.setOnClickListener{
             changeFragment(homeFragment)
-            binding.mainNavigation.setScrollPosition(2,0f,true)
+            binding.mainNavigation.getTabAt(2)!!.select()
         }
         binding.tbMainBack.setOnClickListener{
             onBackPressed()

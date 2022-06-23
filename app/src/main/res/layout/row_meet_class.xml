@@ -4,7 +4,8 @@
     android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/rect_radious_stroke"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:layout_marginVertical="12dp">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="0dp"
     android:layout_height="match_parent"
@@ -38,15 +39,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/rowMeetClassSpecial"
+        android:id="@+id/rowMeetClassNew"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/radious"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/colorPrimary"
         android:paddingHorizontal="7dp"
         android:layout_marginStart="8dp"
-        android:text="New"
+        android:text="NEW"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rowMeetClassName"
+        app:layout_constraintStart_toEndOf="@id/rowMeetClassLevel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rowMeetClassHot"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radious"
+        android:backgroundTint="@color/light_red"
+        android:paddingHorizontal="7dp"
+        android:layout_marginStart="8dp"
+        android:text="HOT"
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="@+id/rowMeetClassName"
@@ -102,5 +119,6 @@
         android:layout_margin="3dp"
         android:layout_weight="1"
         android:layout_width="0dp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
 </LinearLayout>
