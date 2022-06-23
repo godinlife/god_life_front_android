@@ -9,7 +9,6 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/rowFindImage"
-        android:src="@drawable/ic_baseline_home_24"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginHorizontal="14dp"
@@ -20,7 +19,6 @@
 
     <TextView
         android:id="@+id/rowFindName"
-        android:text="asdf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +29,6 @@
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/rowFindLevel"
-        android:text="asdf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="3dp"
@@ -51,7 +48,6 @@
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/rowFindCategory"
-        android:text="주요활동 "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/rowFindCategoryText"
